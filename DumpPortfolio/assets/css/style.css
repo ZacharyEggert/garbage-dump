@@ -1,0 +1,218 @@
+
+:root {
+    --colorBackground: #FFF;
+    --colorHeader: #AAA;
+    --colorSidebar: #CCC;
+    --colorText: #000;
+    --colorCardBackground: #CCC;
+    --colorCardTitleBackground: #EEE;
+    --colorCardTitleBorder: #77F;
+}
+
+
+/*TODO Fix font formatting */
+
+
+/* Plenty of placeholders left in doc to make editting easier. */
+
+body {
+ background: var(--colorBackground);
+}
+
+/* Heading */
+
+header {
+    padding: 0 30px 0 30px;
+    width: 100%;
+    background-color: var(--colorHeader);
+}
+/* push to far sides of header, force content to vertical center */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 4rem;
+}
+
+.nav-list {
+    margin: 10px 0;
+}
+
+.nav-list li {
+    margin: 0 0 0 26px;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+/* link formatting is bad */
+/*TODO FIX ACCESSIBILITY, ACTIVE */
+.nav-list li a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* flex columns for dividing about and work sections */
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+}
+/* flex rows for label div and main div separation */
+main section {
+    flex: 0 0 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--colorSidebar);
+}
+/* label formatting */
+.label {
+    align-items: right;
+    text-align: right;
+    margin: 20px 10px;
+    border-right: 2px solid #333;
+    min-width: 80px;
+    flex: 0 0 350px;
+}
+
+.label h2 {
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+/* padding to match label margins */
+.about-me {
+    background-color: var(--colorBackground);
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+/* Card View section */
+/* Uses Flexbox to automatically size items */
+.cards {
+    flex: 1 1 300px;
+    background-color: var(--colorBackground);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.cards .card {
+    height: 450px;
+    background-color: var(--colorCardBackground);
+    flex: 1 0 30%;
+    min-width: 350px;
+    margin: 15px;
+    background-image: url("../images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.cards .card:first-child {
+    flex: 1 1 90%;
+    border-radius: 1rem;
+}
+
+/* Card Content*/
+
+.cards .card .spacer {
+    height: 150px;
+    width: 100%;
+    background: none;
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.spacer h3 {
+    position: relative;
+    bottom: -7.5rem;
+    border: var(--colorCardTitleBorder) 3px solid;
+    border-radius: 5px;
+    padding-top: .2rem;
+    background-color: var(--colorCardTitleBackground);
+    font-size: 3rem;
+    width: 400px;
+    height: 4rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards .card .card-body {
+    background-color: var(--colorCardBackground);
+    height: 300px;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    
+}
+
+.card-body p {
+    text-align: left;
+    flex: 0 0 80%;
+    font-size: 1.5rem;
+}
+
+
+
+/*TODO push all this into work label section*/
+.contact-container {
+    flex: 1 1 300px;
+    display: flex;
+    background-color: var(--colorBackground);
+    align-items: center;
+    padding: 30px;
+
+}
+
+.contact-list {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.contact-list>li {
+    flex: 1 1 30px;
+}
+
+.contact-list li a {
+    color: inherit;
+    text-decoration: inherit;
+    display: block;
+    padding: 4px 16px;
+}
+
+
+/* 
+    KEEP THIS LAST
+*/
+/* Currently usused */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
